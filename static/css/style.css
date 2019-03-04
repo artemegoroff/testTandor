@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1.2;
+}
+
+* {
+    font-family: Arial;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+#wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 0;
+    margin: 0 auto;
+    background: #efffb6;
+    margin-left: 15%;
+}
+
+/* меню */
+.sidebar {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+}
+
+.sidebar a {
+    padding: 16px 8px 16px 26px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+
+@media screen and (min-height: 780px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 11px;
+    }
+}
+
+/* форма */
+
+.add-comment {
+    padding: 0;
+    width: 40%;
+    min-height: 100vh;
+    border-radius: 5px;
+    /*background-color: #f2f2f2;*/
+
+    margin: 0 20%;
+}
+
+.add-comment h1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+input[type=text], input[type=tel], input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.add-comment .empty {
+    border-color: red;
+}
+
+/*modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    margin-top: -20px;
+    margin-right: -13px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.listComments {
+    width: 50%;
+    /*min-height: 1080px;*/
+    padding: 10px 0;
+    margin: 0 20% 0 10%;
+}
+
+.listComments h1 {
+    padding-bottom: 20px;
+    font-size: 23px;
+    text-align: center;
+}
+
+.listComments li h2 {
+    padding: 10px 0;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.listComments ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.listComments ul li {
+    border: 1px solid #ddd; /* Add a thin border to each list item */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Add a grey background color */
+    padding-left: 20px;
+    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-right: 110px;
+    margin: 5px;
+    position: relative;
+}
+
+.listComments ul li .location {
+    margin-top: 20px;
+}
+
+.location p {
+    margin-top: 10px;
+}
+
+.listComments ul li .btn-delete {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 30px;
+}
+
+.listComments ul li .btn-delete:hover {
+    font-size: 35px;
+    color: red;
+}
+
+/*Статистика*/
+.stat {
+    width: 40%;
+    /*min-height: 1080px;*/
+    padding: 10px 0;
+    margin: 0 15% 0 10%;
+    background-color: #d1faff;
+}
+
+.tabStat table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.tabStat th, td {
+    text-align: center;
+    padding: 16px;
+    padding-left: 80px;
+    /*padding-right: 80px;*/
+}
+
+.tabStat tr:nth-child(even) {
+    background-color: #f2f2f2
+}

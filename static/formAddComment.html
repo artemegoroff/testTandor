@@ -1,0 +1,54 @@
+
+<div class="add-comment">
+    <h1>Оставьте свой комментарий</h1>
+    <form id='add_comment' action="/save/" method="post">
+
+        <label for="surname">Фамилия</label>
+        <input type="text" id="surname" name="surname" required placeholder="Иванов">
+
+        <label for="first_name">Имя</label>
+        <input type="text" id="first_name" name="first_name" required placeholder="Иван">
+
+        <label for="middle_name">Отчество</label>
+        <input type="text" name="middle_name" id="middle_name" placeholder="Иванович">
+
+
+        <label for="region">Регион</label>
+        <select name="region" id="region">
+            $regions
+        </select>
+
+        <label for="city">Город</label>
+        <select name="city" id="city">
+            <option style="display:none;"></option>
+        </select>
+
+
+        <label for="phone">Телефон</label>
+        <input type="tel" name="phone" id="phone" placeholder="(___) xxxxxxx">
+
+
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required placeholder="name@domain.com">
+
+        <br>
+        <label for="comment">Текст комментария*</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"
+                  placeholder="Оставьте свой комментарий здесь"></textarea>
+
+
+        <input id='saveComment' type="submit" value="Submit">
+
+    </form>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> Комментарий сохранен! </p>
+  </div>
+
+</div>
